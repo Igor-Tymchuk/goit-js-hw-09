@@ -86,10 +86,10 @@ galleryList.insertAdjacentHTML('beforeend', imagesMarkup);
 import SimpleLightbox from "simplelightbox";
 import "simplelightbox/dist/simple-lightbox.min.css";
 
-let gallery = new SimpleLightbox('.gallery a');
-gallery.on('show.simplelightbox', {
+let gallery = new SimpleLightbox('.gallery a', {
     captions: true,
     captionsData: 'alt',
     captionPosition: 'bottom',
     captionDelay: 250,
 });
+gallery.on('show.simplelightbox');
