@@ -68,7 +68,7 @@ const galleryList = document.querySelector('ul.gallery');
 const imagesMarkup = images
     .map(image => {
         const { preview, original, description } = image;
-        return `<li li class="gallery-item" >
+        return `<li class="gallery-item" >
             <a class="gallery-link" href="${original}">
                 <img
                     class="gallery-image"
@@ -83,30 +83,13 @@ const imagesMarkup = images
     .join('');
 galleryList.insertAdjacentHTML('beforeend', imagesMarkup);
 
-galleryList.addEventListener("mouseover", scaleThumb);
-function scaleThumb(event) {
-    const galleryElem = event.target;
-    if (galleryElem.nodeName === "IMG")
-        galleryElem.classList.add("thumb-scale");
-    ;
-}
-galleryList.addEventListener("mouseout", defaultThumb);
-function defaultThumb(event) {
-    const galleryElem = event.target;
-    if (galleryElem.nodeName === "IMG")
-        galleryElem.classList.remove("thumb-scale");
-    ;
-}
-
 import SimpleLightbox from "simplelightbox";
 import "simplelightbox/dist/simple-lightbox.min.css";
 
 let gallery = new SimpleLightbox('.gallery a');
-gallery.on('show.simplelightbox', function () {
-	// Do something…
+gallery.on('show.simplelightbox', {
+    captions: true,
+    captionsData: 'alt',
+    captionPosition: 'bottom',
+    captionDelay: 250,
 });
-
-gallery.on('error.simplelightbox', function (e) {
-	console.log(e); // Some usefull information
-});
-
