@@ -14,7 +14,6 @@ const saveData = (event) => {
     event.preventDefault();
     formData.email = event.currentTarget.elements.email.value.trim();
     formData.message = event.currentTarget.elements.message.value.trim();
-    console.log("formData:", formData)
     localStorage.setItem("feedback-form-state", JSON.stringify(formData));
 }
 form.addEventListener("input", saveData);
