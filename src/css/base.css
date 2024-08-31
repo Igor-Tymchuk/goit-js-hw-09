@@ -38,12 +38,13 @@ main:has(.back-link) {
 
 .home-link {
   align-self: center;
-  display: inline-block;
+  display: flex;
   font-family: 'Montserrat', sans-serif;
   border-radius: 8px;
   padding: 8px 16px;
   text-align: center;
   justify-content: center;
+  align-items: center;
   width: 150px;
   height: 20px;
   background: #4e75ff;
