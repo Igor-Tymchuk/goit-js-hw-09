@@ -3,7 +3,7 @@
   width: 408px;
   flex-direction: column;
   padding: 24px;
-  justify-content: center;
+  align-items: center;
   margin: 0 auto;
 }
 label {
@@ -72,6 +72,7 @@ button {
   color: #fff;
   transition: background-color 300ms ease;
   align-self: flex-start;
+  margin-left: 24px;
 }
 button:hover,
 button:focus {
